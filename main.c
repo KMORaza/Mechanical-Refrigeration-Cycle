@@ -36,15 +36,15 @@ float calculateWetBulbTemperature(float T, float T_dp);
 int main() {
     float L = 10.0;  // Length of pipe in evaporator and condenser (m)
     float D = 0.05;  // Diameter of pipe in evaporator and condenser (m)
-    float rho = 1.0; // Density of the fluid (kg/m³) - assume a value
-    float v = 2.0;   // Velocity of the fluid (m/s) - assume a value
-    float Pr = 7.0;  // Prandtl number - assume a value for the refrigerant
+    float rho = 1.0; // Density of the fluid (kg/m³) 
+    float v = 2.0;   // Velocity of the fluid (m/s) 
+    float Pr = 7.0;  // Prandtl number
     float T_evap = 5.0;  // Saturation temperature in the evaporator (°C)
     float T_cond = 35.0; // Saturation temperature in the condenser (°C)
     float P_evap = 1.2;  // Saturation pressure in the evaporator (bar)
     float P_cond = 4.5;  // Saturation pressure in the condenser (bar)
-    float deltaP_e = calculatePressureDrop(L, D, rho, v, 0.02); // Friction factor (0.02 is an example)
-    float deltaP_c = calculatePressureDrop(L, D, rho, v, 0.02); // Friction factor (0.02 is an example)
+    float deltaP_e = calculatePressureDrop(L, D, rho, v, 0.02); // Friction factor 
+    float deltaP_c = calculatePressureDrop(L, D, rho, v, 0.02); // Friction factor
     float deltaP_v = calculateExpansionPressureDrop(P_evap, T_evap, T_cond);
     float eta_c = 0.85; // Compressor efficiency
     float eta_t = 0.90; // Turbine efficiency
@@ -175,7 +175,7 @@ int main() {
     printf("\nHeat Transfer Rates:\n");
     printf("  Heat Transfer Rate in Evaporator (Q_evap) = %.2f kJ/s\n", Q_evap / 1000); // Convert W to kJ/s
     printf("  Heat Transfer Rate in Condenser (Q_cond) = %.2f kJ/s\n", Q_cond / 1000); // Convert W to kJ/s
-    printf("\nPerformance Metrics:\n");
+    printf("\n\n");
     printf("  Ideal work done by compressor (Wc_ideal): %.2f kJ/s\n", Wc_ideal);
     printf("  Actual work done by compressor (Wc_actual): %.2f kJ/s\n", Wc_actual);
     printf("  Second-law efficiency of compressor: %.2f\n", secondLawEfficiency_compressor);
